@@ -64,6 +64,11 @@ body {
 	--yy: calc(      cos(var(--rad)));
 }
 
+/* NOTE: This is more proof of concept than anything, transform is probably
+* usable and surely more performant, but this was very interesting to figure
+* out and it's good to know that this is possible in case transform is too
+* limited for the visualiation */
+
 /* size and translation */
 .vec {
 	--x1: var(--ix1);
