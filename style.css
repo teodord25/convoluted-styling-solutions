@@ -38,3 +38,7 @@ body {
 	counter-reset: t var(--t);
 	content: counter(t);
 }
+
+svg {
+	border: 1px solid red;
+}
