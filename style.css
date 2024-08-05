@@ -14,6 +14,16 @@ body {
 	border: 1px solid red;
 }
 
+.container::after {
+	counter-reset: t var(--t);
+	content: counter(t);
+}
+
+.vec {
+	margin: 0;
+	padding: 0;
+}
+
 @property --t {
 	syntax: "<integer>";
 	initial-value: 0;
@@ -33,10 +43,11 @@ body {
 :root {
 	/* number of ms in 24h */
 	animation: tick 86400000ms linear infinite;
-	--initx1: 180px;
-	--inity1: 180px;
-	--initx2: 240px;
-	--inity2: 240px;
+	--ix1: 180;
+	--iy1: 180;
+	--ix2: 270;
+	--iy2: 270;
+	--line-width: 3;
 }
 
 .vec {
