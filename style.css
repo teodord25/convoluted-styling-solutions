@@ -7,6 +7,12 @@ body {
 	height: 100vh;
 }
 
+.container {
+	width: 360px;
+	height: 360px;
+	border: 1px solid red;
+}
+
 @property --t {
 	syntax: "<integer>";
 	initial-value: 0;
@@ -25,20 +31,30 @@ body {
 
 :root {
 	/* number of ms in 24h */
-	animation: tick 86400000ms linear infinite
+	animation: tick 86400000ms linear infinite;
+	--initx1: 180px;
+	--inity1: 180px;
+	--initx2: 240px;
+	--inity2: 240px;
 }
 
 .vec {
-	width: 30px;
-	height: 30px;
-	border: 1px solid red;
-}
+	position: relative;
 
-.vec::after {
-	counter-reset: t var(--t);
-	content: counter(t);
-}
+	--x1: var(--initx1);
+	--y1: var(--inity1);
+	--x2: var(--initx2);
+	--y2: var(--inity2);
 
-svg {
-	border: 1px solid red;
+	left: min(
+		var(--x1), var(--x2)
+	);
+	top: min(
+		var(--y1), var(--y2)
+	);
+	width: calc(var(--x2) - var(--x1));
+	height:  calc(var(--y2) - var(--y1));
+
+	background: black;
+	clip-path: polygon(0px 1px, calc(100% - 1px) 100%, 100% calc(100% - 1px), 1px 0%);
 }
