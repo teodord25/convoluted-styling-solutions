@@ -1,0 +1,40 @@
+body {
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+@property --t {
+	syntax: "<integer>";
+	initial-value: 0;
+	inherits: true
+}
+
+@keyframes tick {
+	from {
+		--t: 0
+	}
+
+	to {
+		--t: 86400000
+	}
+}
+
+:root {
+	/* number of ms in 24h */
+	animation: tick 86400000ms linear infinite
+}
+
+.vec {
+	width: 30px;
+	height: 30px;
+	border: 1px solid red;
+}
+
+.vec::after {
+	counter-reset: t var(--t);
+	content: counter(t);
+}
