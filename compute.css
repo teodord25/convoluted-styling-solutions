@@ -96,12 +96,16 @@
 :root {
 	--l: var(--line-width);
 
+	/* TODO: figure out why this works when len is 90 but not when its 127
+	* (127 is the length of the initial vector) maybe something to do with
+	* width? because width is 90... */
 	--len: calc(
 		sqrt(
 			pow(var(--ix1) - var(--ix2), 2) + pow(var(--iy1) - var(--iy2), 2)
 		)
 	);
 	--len: 127;
+	--len: 90;
 
 	/* initial arrow positions */
 	--vpx: 0;
