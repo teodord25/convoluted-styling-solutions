@@ -64,6 +64,10 @@ body {
 	--yy: calc(      cos(var(--rad)));
 }
 
+/* TODO: you might be able to have a "canvas" element in which you have the
+* clippath thing and you keep adding points to it as you rotate the vector,
+* and you end up "tracing" the points as they change
+
 /* NOTE: This is more proof of concept than anything, transform is probably
 * usable and surely more performant, but this was very interesting to figure
 * out and it's good to know that this is possible in case transform is too
