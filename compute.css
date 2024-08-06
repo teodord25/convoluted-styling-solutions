@@ -199,7 +199,8 @@
 :root {
 	--point-size: 10;
 	--point-x: 30;
-	--point-y: 30;
+	--point-x: var(--x2);
+	--point-y: var(--y2);
 
 	--ppx: var(--point-x);
 	--ppy: var(--point-y);
