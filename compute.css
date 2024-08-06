@@ -107,6 +107,8 @@
 	--len: 127;
 	--len: 90;
 
+	--len: calc(var(--ix2) - var(--ix1)); /* this kinda works... */
+
 	/* initial arrow positions */
 	--vpx: 0;
 	--vpy: var(--l);

@@ -17,4 +17,39 @@
 	</div>
 </body>
 
+<script>
+
+	// NOTE: define starting point with click, and ending point with drag.
+	// for the simple transform so like the canvas point it works in all
+	// directions, for the rectangle it only works if dragged in the positive
+	// x and y rection
+	document.addEventListener('mousedown', (event) => {
+		const mouseX = event.clientX;
+		const mouseY = event.clientY;
+
+		// Set initial x1 and y1 values
+		document.documentElement.style.setProperty('--ix1', mouseX);
+		document.documentElement.style.setProperty('--iy1', mouseY);
+
+		// Function to handle dragging
+		const handleMouseMove = (moveEvent) => {
+			const mouseX2 = moveEvent.clientX;
+			const mouseY2 = moveEvent.clientY;
+
+			// Set x2 and y2 values as the mouse is dragged
+			document.documentElement.style.setProperty('--ix2', mouseX2);
+			document.documentElement.style.setProperty('--iy2', mouseY2);
+		};
+
+		// Add the mousemove event listener to track dragging
+		document.addEventListener('mousemove', handleMouseMove);
+
+		// Remove the mousemove event listener on mouseup to stop tracking
+		document.addEventListener('mouseup', () => {
+			document.removeEventListener('mousemove', handleMouseMove);
+		}, {once: true}); // Ensures the mouseup listener is removed after it is called once
+	});
+
+</script>
+
 </html>
