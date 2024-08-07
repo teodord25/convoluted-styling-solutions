@@ -139,6 +139,8 @@
 :root {
 	--point-size: 10;
 	--point-x: 30;
+
+	/* NOTE: this can be used to debug values, it will draw a point at the specified x and y */
 	--point-x: var(--x2);
 	--point-y: var(--y2);
 
