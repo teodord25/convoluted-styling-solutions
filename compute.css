@@ -102,24 +102,24 @@
 
 :root {
 	--arrow-x1: 0;
-	--arrow-y1: 16.66;
+	--arrow-y1: 10;
 
-	--arrow-x2: 66.66;
-	--arrow-y2: 83.33;
+	--arrow-x2: 80;
+	--arrow-y2: 90;
 
-	--arrow-x3: 50;
+	--arrow-x3: 70;
 	--arrow-y3: 100;
 
 	--arrow-x4: 100;
 	--arrow-y4: 100;
 
 	--arrow-x5: 100;
-	--arrow-y5: 50;
+	--arrow-y5: 70;
 
-	--arrow-x6: 83.33;
-	--arrow-y6: 66.66;
+	--arrow-x6: 90;
+	--arrow-y6: 80;
 
-	--arrow-x7: 16.66;
+	--arrow-x7: 10;
 	--arrow-y7: 0;
 }
 
