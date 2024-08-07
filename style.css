@@ -20,8 +20,8 @@ body {
 
 	position: relative; /* figure out whether making this absolute is a good idea */
 
-	width: calc(var(--max-width) / 2 * 1px);
-	height: calc(var(--max-height) / 2 * 1px);
+	width: calc(var(--max-width) / 2 / 1.41 * 1px);
+	height: calc(var(--max-height) / 2 / 1.41 * 1px);
 
 	left: calc(var(--ix1) * 1px);
 	top:  calc(var(--iy1) * 1px);
@@ -41,7 +41,9 @@ body {
 	transform-origin: 0 0;
 	transform: rotate(
 		calc(
-			var(--rad) * 1rad
+			(
+				var(--rad) - (3.1415/4) /* account for inherent rotation because arrow is defined diagonally */
+			) * 1rad
 		)
 	);
 }

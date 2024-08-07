@@ -101,38 +101,26 @@
 
 
 :root {
-/***********************************************************
-*          o                                               *
-*          oo                                              *
-*          o o                                             *
-*ooooooooooo  o                                            *
-*o         o   o                                           *
-*ooooooooooo  o                                            *
-*          o o                                             *
-*          oo                                              *
-*          o                                               *
-***********************************************************/
-
 	--arrow-x1: 0;
-	--arrow-y1: 3;
+	--arrow-y1: 2;
 
-	--arrow-x2: 0;
-	--arrow-y2: 5;
+	--arrow-x2: 8;
+	--arrow-y2: 10;
 
-	--arrow-x3: 10;
-	--arrow-y3: 5;
+	--arrow-x3: 6;
+	--arrow-y3: 12;
 
-	--arrow-x4: 10;
-	--arrow-y4: 8;
+	--arrow-x4: 12;
+	--arrow-y4: 12;
 
-	--arrow-x5: 14;
-	--arrow-y5: 4;
+	--arrow-x5: 12;
+	--arrow-y5: 6;
 
 	--arrow-x6: 10;
-	--arrow-y6: 0;
+	--arrow-y6: 8;
 
-	--arrow-x7: 10;
-	--arrow-y7: 3;
+	--arrow-x7: 2;
+	--arrow-y7: 0;
 }
 
 /* canvas point computations */
