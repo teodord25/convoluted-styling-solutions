@@ -20,26 +20,29 @@ body {
 
 	position: relative; /* figure out whether making this absolute is a good idea */
 
-	width: calc(
-		var(--w) * 1px
-	);
-	height: calc(
-		var(--h) * 1px
-	);
+	width: calc(var(--max-width) / 2 * 1px);
+	height: calc(var(--max-height) / 2 * 1px);
 
-	left: calc(
-		min( var(--x1), var(--x2) ) * 1px
-	);
-	top:  calc(
-		min( var(--y1), var(--y2) ) * 1px
-	);
+	left: calc(var(--ix1) * 1px);
+	top:  calc(var(--iy1) * 1px);
 
 	background: gray;
 	clip-path: polygon(
-		calc(var(--px) * 1px) calc(var(--py) * 1px),
-		calc(var(--qx) * 1px) calc(var(--qy) * 1px),
-		calc(var(--rx) * 1px) calc(var(--ry) * 1px),
-		calc(var(--sx) * 1px) calc(var(--sy) * 1px)
+		calc(var(--arrow-x1) * 1px) calc(var(--arrow-y1) * 1px),
+		calc(var(--arrow-x2) * 1px) calc(var(--arrow-y2) * 1px),
+		calc(var(--arrow-x3) * 1px) calc(var(--arrow-y3) * 1px),
+		calc(var(--arrow-x4) * 1px) calc(var(--arrow-y4) * 1px),
+		calc(var(--arrow-x5) * 1px) calc(var(--arrow-y5) * 1px),
+		calc(var(--arrow-x6) * 1px) calc(var(--arrow-y6) * 1px),
+		calc(var(--arrow-x7) * 1px) calc(var(--arrow-y7) * 1px)
+	);
+
+	/* set rotation point */
+	transform-origin: 0 0;
+	transform: rotate(
+		calc(
+			var(--rad) * 1rad
+		)
 	);
 }
 

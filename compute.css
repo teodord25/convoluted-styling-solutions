@@ -20,14 +20,14 @@
 	--ix1: 180;
 	--iy1: 180;
 	--ix2: 270;
-	--iy2: 270;
-	--line-width: 3;
+	--iy2: 180;
+	--line-width: 5;
 }
 
 /* rotation matrix */
 :root {
-	/* convert to radians */
-	--rad: calc(var(--t) * 0.0174533 / 25);
+	/* 1 second = pi/4 radians */
+	--rad: calc((var(--t) / 1000) * (.25 * 3.1415));
 
 	/* rotation matrix */
 	--xx: calc(      cos(var(--rad)));
@@ -89,112 +89,50 @@
 	--h: calc(
 		max(var(--y2) - var(--y1), var(--y1) - var(--y2))
 	);
+
+	--max-width: calc(
+		max(var(--ix2) - var(--ix1), var(--ix1) - var(--ix2)) * 2
+	);
+
+	--max-height: calc(
+		max(var(--ix2) - var(--ix1), var(--ix1) - var(--ix2)) * 2
+	);
 }
 
 
-/* vec rectangle points computations */
 :root {
-	--l: var(--line-width);
+/***********************************************************
+*          o                                               *
+*          oo                                              *
+*          o o                                             *
+*ooooooooooo  o                                            *
+*o         o   o                                           *
+*ooooooooooo  o                                            *
+*          o o                                             *
+*          oo                                              *
+*          o                                               *
+***********************************************************/
 
-	/* TODO: figure out why this works when len is 90 but not when its 127
-	* (127 is the length of the initial vector) maybe something to do with
-	* width? because width is 90... */
-	--len: calc(
-		sqrt(
-			pow(var(--ix1) - var(--ix2), 2) + pow(var(--iy1) - var(--iy2), 2)
-		)
-	);
-	--len: 127;
-	--len: 90;
+	--arrow-x1: 0;
+	--arrow-y1: 3;
 
-	--len: calc(var(--ix2) - var(--ix1)); /* this kinda works... */
+	--arrow-x2: 0;
+	--arrow-y2: 5;
 
-	/* initial arrow positions */
-	--vpx: 0;
-	--vpy: var(--l);
+	--arrow-x3: 10;
+	--arrow-y3: 5;
 
-	--vqx: calc(var(--len) - var(--l));
-	--vqy: var(--len);
+	--arrow-x4: 10;
+	--arrow-y4: 8;
 
-	--vrx: var(--len);
-	--vry: calc(var(--len) - var(--l));
+	--arrow-x5: 14;
+	--arrow-y5: 4;
 
-	--vsx: var(--l);
-	--vsy: 0;
+	--arrow-x6: 10;
+	--arrow-y6: 0;
 
-	/* rotate x,y around local origin */
-	--rpx: calc(
-		var(--xx) * var(--vpx) + var(--xy) * var(--vpy)
-	);
-	--rpy: calc(
-		var(--yx) * var(--vpx) + var(--yy) * var(--vpy)
-	);
-
-	--rqx: calc(
-		var(--xx) * var(--vqx) + var(--xy) * var(--vqy)
-	);
-	--rqy: calc(
-		var(--yx) * var(--vqx) + var(--yy) * var(--vqy)
-	);
-
-	--rrx: calc(
-		var(--xx) * var(--vrx) + var(--xy) * var(--vry)
-	);
-	--rry: calc(
-		var(--yx) * var(--vrx) + var(--yy) * var(--vry)
-	);
-
-	--rsx: calc(
-		var(--xx) * var(--vsx) + var(--xy) * var(--vsy)
-	);
-	--rsy: calc(
-		var(--yx) * var(--vsx) + var(--yy) * var(--vsy)
-	);
-
-	/* NOTE: to make clip path thing work you have to find the most
-	* negative x and y so you can find the offset by how much to move the whole
-	* thing to keep it in positive space as it rotates since clip path only
-	* wants *local* *positive* values scaled to its length (using % might also work
-	* with this offset adjustment stuff)
-	* */
-
-	/* smallest x */
-	--smx: calc(min(var(--rpx), var(--rqx), var(--rrx), var(--rsx)));
-
-	/* smallest y */
-	--smy: calc(min(var(--rpy), var(--rqy), var(--rry), var(--rsy)));
-
-
-	--offx: calc(min(var(--smx), 0) * -1);
-	--offy: calc(min(var(--smy), 0) * -1);
-
-	--px: calc(
-		var(--rpx) + var(--offx)
-	);
-	--py: calc(
-		var(--rpy) + var(--offy)
-	);
-
-	--qx: calc(
-		var(--rqx) + var(--offx)
-	);
-	--qy: calc(
-		var(--rqy) + var(--offy)
-	);
-
-	--rx: calc(
-		var(--rrx) + var(--offx)
-	);
-	--ry: calc(
-		var(--rry) + var(--offy)
-	);
-
-	--sx: calc(
-		var(--rsx) + var(--offx)
-	);
-	--sy: calc(
-		var(--rsy) + var(--offy)
-	);
+	--arrow-x7: 10;
+	--arrow-y7: 3;
 }
 
 /* canvas point computations */
