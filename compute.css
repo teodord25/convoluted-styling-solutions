@@ -17,10 +17,10 @@
 :root {
 	/* number of ms in 24h */
 	animation: tick 86400000ms linear infinite;
-	--ix1: 180;
-	--iy1: 180;
-	--ix2: 270;
-	--iy2: 180;
+	--i1x1: 180;
+	--i1y1: 180;
+	--i1x2: 270;
+	--i1y2: 180;
 	--line-width: 5;
 }
 
@@ -47,23 +47,23 @@
 
 /* size and translation */
 :root {
-	--x1: var(--ix1);
-	--y1: var(--iy1);
+	--x1: var(--i1x1);
+	--y1: var(--i1y1);
 
 	/* NOTE: you have to define the vector's x and y relative to the point you want to rotate around
 	* because by just rotating the vector, the origin of the vector will be the origin of the coordinate system
 	* and not the point you want to rotate around */
 
 	/* point of rotation */
-	--ox: var(--ix1);
-	--oy: var(--iy1);
+	--ox: var(--i1x1);
+	--oy: var(--i1y1);
 
 	/* local x and y (relative to the point of rotation) */
 	--vx2: calc(
-		var(--ix2) - var(--ox)
+		var(--i1x2) - var(--ox)
 	);
 	--vy2: calc(
-		var(--iy2) - var(--oy)
+		var(--i1y2) - var(--oy)
 	);
 
 	/* rotated x and y */
@@ -91,11 +91,11 @@
 	);
 
 	--max-width: calc(
-		max(var(--ix2) - var(--ix1), var(--ix1) - var(--ix2)) * 2
+		max(var(--i1x2) - var(--i1x1), var(--i1x1) - var(--i1x2)) * 2
 	);
 
 	--max-height: calc(
-		max(var(--ix2) - var(--ix1), var(--ix1) - var(--ix2)) * 2
+		max(var(--i1x2) - var(--i1x1), var(--i1x1) - var(--i1x2)) * 2
 	);
 }
 
@@ -123,14 +123,24 @@
 	--arrow-y7: 0;
 }
 
+/* second vector */
+:root {
+	--i2x1: calc(
+		var(--x2)
+	);
+	--i2y1: calc(
+		var(--y2)
+	);
+}
+
 /* canvas point computations */
 :root {
 	--point-size: 10;
 	--point-x: 30;
 
 	/* NOTE: this can be used to debug values, it will draw a point at the specified x and y */
-	--point-x: var(--x2);
-	--point-y: var(--y2);
+	--point-x: var(--i2x1);
+	--point-y: var(--i2y1);
 
 	--ppx: var(--point-x);
 	--ppy: var(--point-y);

@@ -13,7 +13,11 @@
 	</div>
 
 	<div class="container">
-		<div class="vec"></div>
+		<div class="vec v1">
+			<div class="vec v2">
+				?
+			</div>
+		</div>
 	</div>
 </body>
 
@@ -28,8 +32,8 @@
 		const mouseY = event.clientY;
 
 		// Set initial x1 and y1 values
-		document.documentElement.style.setProperty('--ix1', mouseX);
-		document.documentElement.style.setProperty('--iy1', mouseY);
+		document.documentElement.style.setProperty('--i1x1', mouseX);
+		document.documentElement.style.setProperty('--i1y1', mouseY);
 
 		// Function to handle dragging
 		const handleMouseMove = (moveEvent) => {
@@ -37,8 +41,8 @@
 			const mouseY2 = moveEvent.clientY;
 
 			// Set x2 and y2 values as the mouse is dragged
-			document.documentElement.style.setProperty('--ix2', mouseX2);
-			document.documentElement.style.setProperty('--iy2', mouseY2);
+			document.documentElement.style.setProperty('--i1x2', mouseX2);
+			document.documentElement.style.setProperty('--i1y2', mouseY2);
 		};
 
 		// Add the mousemove event listener to track dragging
