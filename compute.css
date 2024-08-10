@@ -14,8 +14,13 @@
 	}
 }
 
+
+.counter::after {
+	counter-reset: t var(--t);
+	content: counter(t);
+}
+
 :root {
-	/* number of ms in 24h */
 	animation: tick 86400000ms linear infinite;
 	--i1x1: 180;
 	--i1y1: 180;
