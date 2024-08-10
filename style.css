@@ -102,71 +102,62 @@ body {
 	top: 0;
 }
 
-
-@property --i {
+@property --cell-row {
 	syntax: "<integer>";
 	initial-value: 0;
 	inherits: true
 }
 
-@property --j {
-	syntax: "<integer>";
-	initial-value: 100;
-	inherits: true
-}
-
-@property --debug {
+@property --cell-col {
 	syntax: "<integer>";
 	initial-value: 0;
 	inherits: true
 }
-
 
 :root {
-	/* how long it takes to turn it on */
-	--i: calc(var(--y2) / 100);
-
-	/* how long it takes to turn it off */
-	--j: calc(var(--x2) / 100);
-
-	--opacity: 
-	--debug: var(--delay);
+	--cell-width: 25;
+	--cell-row: 0;
+	--cell-col: 0;
 }
 
-@keyframes i-toggle {
-	from { --i: 0; }
-	to { --i: 100; }
-}
-
-@keyframes j-toggle {
-	from { --j: 100; }
-	to { --j: 0; }
-}
-
-.memory {
-	counter-reset: i var(--i) j var(--j) debug var(--debug);
-
-
+.grid {
 	position: absolute;
-	width:100px;
-	left: 400px;
+	width: 400px;
+	height: 400px;
 	background-color:gray;
+
+	display: flex;
+	flex-direction: column;
 }
 
-.mem {
-	width: 50px;
-	height: 50px;
+.row {
+	display: flex;
+	flex-direction: row;
+}
+
+.cell {
+	width: var(--cell-width);
+	height: var(--cell-width);
 	background-color: red;
-	margin: 5px;
+
+	--lower-bound: calc(
+		(var(--cell-col) + 0) * var(--cell-width)
+	);
+
+	--upper-bound: calc(
+		(var(--cell-col) + 1) * var(--cell-width)
+	);
+
+	--trace-opacity: calc(
+		min(max(var(--x2) - var(--lower-bound), 0), 1)
+		* min(max(var(--upper-bound) - var(--x2), 0), 1) * 100
+	);
+
+	opacity: var(--trace-opacity);
+	transition: opacity 1s ease;
 }
 
-.addr1::after {
-	content: counter(i);
-}
 
-.addr2::after {
-	content: counter(debug);
-}
 
 .addr1 {
 	/* interval a = 180, b = 270, opacity fades in, outside interval opacity fades out :D */
