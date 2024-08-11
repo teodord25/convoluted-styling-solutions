@@ -96,156 +96,74 @@ body {
 	);
 }
 
+.canvas1 {
+	--rad: max(0, calc((var(--t) / 1000) * (.25 * 3.1415) - 0.1));
+	--point-x: calc(cos(var(--rad)) * (var(--i1x2) - var(--i1x1)) + (-1 * sin(var(--rad))) * (var(--i1y2) - var(--i1y1)) + var(--i1x1));
+	--point-y: calc(sin(var(--rad)) * (var(--i1x2) - var(--i1x1)) + cos(var(--rad)) * (var(--i1y2) - var(--i1y1)) + var(--i1y1));
+
+	--ppx: var(--point-x);                           --ppy: var(--point-y);
+	--pqx: var(--point-x);                           --pqy: calc(var(--point-y) + var(--point-size));
+	--prx: calc(var(--point-x) + var(--point-size)); --pry: calc(var(--point-y) + var(--point-size));
+	--psx: calc(var(--point-x) + var(--point-size)); --psy: var(--point-y);
+}
+
+.canvas2 {
+	--rad: max(0, calc((var(--t) / 1000) * (.25 * 3.1415) - 0.2));
+	--point-x: calc(cos(var(--rad)) * (var(--i1x2) - var(--i1x1)) + (-1 * sin(var(--rad))) * (var(--i1y2) - var(--i1y1)) + var(--i1x1));
+	--point-y: calc(sin(var(--rad)) * (var(--i1x2) - var(--i1x1)) + cos(var(--rad)) * (var(--i1y2) - var(--i1y1)) + var(--i1y1));
+
+	--ppx: var(--point-x);                           --ppy: var(--point-y);
+	--pqx: var(--point-x);                           --pqy: calc(var(--point-y) + var(--point-size));
+	--prx: calc(var(--point-x) + var(--point-size)); --pry: calc(var(--point-y) + var(--point-size));
+	--psx: calc(var(--point-x) + var(--point-size)); --psy: var(--point-y);
+}
+
+.canvas3 {
+	--rad: max(0, calc((var(--t) / 1000) * (.25 * 3.1415) - 0.3));
+	--point-x: calc(cos(var(--rad)) * (var(--i1x2) - var(--i1x1)) + (-1 * sin(var(--rad))) * (var(--i1y2) - var(--i1y1)) + var(--i1x1));
+	--point-y: calc(sin(var(--rad)) * (var(--i1x2) - var(--i1x1)) + cos(var(--rad)) * (var(--i1y2) - var(--i1y1)) + var(--i1y1));
+
+	--ppx: var(--point-x);                           --ppy: var(--point-y);
+	--pqx: var(--point-x);                           --pqy: calc(var(--point-y) + var(--point-size));
+	--prx: calc(var(--point-x) + var(--point-size)); --pry: calc(var(--point-y) + var(--point-size));
+	--psx: calc(var(--point-x) + var(--point-size)); --psy: var(--point-y);
+}
+
+.canvas4 {
+	--rad: max(0, calc((var(--t) / 1000) * (.25 * 3.1415) - 0.4));
+	--point-x: calc(cos(var(--rad)) * (var(--i1x2) - var(--i1x1)) + (-1 * sin(var(--rad))) * (var(--i1y2) - var(--i1y1)) + var(--i1x1));
+	--point-y: calc(sin(var(--rad)) * (var(--i1x2) - var(--i1x1)) + cos(var(--rad)) * (var(--i1y2) - var(--i1y1)) + var(--i1y1));
+
+	--ppx: var(--point-x);                           --ppy: var(--point-y);
+	--pqx: var(--point-x);                           --pqy: calc(var(--point-y) + var(--point-size));
+	--prx: calc(var(--point-x) + var(--point-size)); --pry: calc(var(--point-y) + var(--point-size));
+	--psx: calc(var(--point-x) + var(--point-size)); --psy: var(--point-y);
+}
+
+.canvas5 {
+	--rad: max(0, calc((var(--t) / 1000) * (.25 * 3.1415) - 0.5));
+	--point-x: calc(cos(var(--rad)) * (var(--i1x2) - var(--i1x1)) + (-1 * sin(var(--rad))) * (var(--i1y2) - var(--i1y1)) + var(--i1x1));
+	--point-y: calc(sin(var(--rad)) * (var(--i1x2) - var(--i1x1)) + cos(var(--rad)) * (var(--i1y2) - var(--i1y1)) + var(--i1y1));
+
+	--ppx: var(--point-x);                           --ppy: var(--point-y);
+	--pqx: var(--point-x);                           --pqy: calc(var(--point-y) + var(--point-size));
+	--prx: calc(var(--point-x) + var(--point-size)); --pry: calc(var(--point-y) + var(--point-size));
+	--psx: calc(var(--point-x) + var(--point-size)); --psy: var(--point-y);
+}
+
+.canvas6 {
+	--rad: max(0, calc((var(--t) / 1000) * (.25 * 3.1415) - 0.6));
+	--point-x: calc(cos(var(--rad)) * (var(--i1x2) - var(--i1x1)) + (-1 * sin(var(--rad))) * (var(--i1y2) - var(--i1y1)) + var(--i1x1));
+	--point-y: calc(sin(var(--rad)) * (var(--i1x2) - var(--i1x1)) + cos(var(--rad)) * (var(--i1y2) - var(--i1y1)) + var(--i1y1));
+
+	--ppx: var(--point-x);                           --ppy: var(--point-y);
+	--pqx: var(--point-x);                           --pqy: calc(var(--point-y) + var(--point-size));
+	--prx: calc(var(--point-x) + var(--point-size)); --pry: calc(var(--point-y) + var(--point-size));
+	--psx: calc(var(--point-x) + var(--point-size)); --psy: var(--point-y);
+}
+
 .counter {
 	position: absolute;
 	left: 0;
 	top: 0;
 }
-
-@property --cell-row {
-	syntax: "<integer>";
-	initial-value: 0;
-	inherits: true
-}
-
-@property --cell-col {
-	syntax: "<integer>";
-	initial-value: 0;
-	inherits: true
-}
-
-:root {
-	--cell-width: 25;
-	--cell-row: 0;
-	--cell-col: 0;
-}
-
-.grid {
-	position: absolute;
-	width: 400px;
-	height: 400px;
-	background-color:gray;
-
-	display: flex;
-	flex-direction: column;
-}
-
-.row {
-	display: flex;
-	flex-direction: row;
-}
-
-.cell {
-	width: var(--cell-width);
-	height: var(--cell-width);
-	background-color: red;
-
-	--lower-bound: calc(
-		(var(--cell-col) + 0) * var(--cell-width)
-	);
-
-	--upper-bound: calc(
-		(var(--cell-col) + 1) * var(--cell-width)
-	);
-
-	--trace-opacity: calc(
-		min(max(var(--x2) - var(--lower-bound), 0), 1)
-		* min(max(var(--upper-bound) - var(--x2), 0), 1) * 100
-	);
-
-	opacity: var(--trace-opacity);
-	transition: opacity 1s ease;
-}
-
-
-
-
-.c-0 { --cell-row: 0; --cell-col: 0 }
-.c-1 { --cell-row: 0; --cell-col: 1 }
-.c-2 { --cell-row: 0; --cell-col: 2 }
-.c-3 { --cell-row: 0; --cell-col: 3 }
-.c-4 { --cell-row: 0; --cell-col: 4 }
-.c-5 { --cell-row: 0; --cell-col: 5 }
-.c-6 { --cell-row: 0; --cell-col: 6 }
-.c-7 { --cell-row: 0; --cell-col: 7 }
-.c-8 { --cell-row: 0; --cell-col: 8 }
-
-.c-9 { --cell-row: 1; --cell-col: 0 }
-.c-10 { --cell-row: 1; --cell-col: 1 }
-.c-11 { --cell-row: 1; --cell-col: 2 }
-.c-12 { --cell-row: 1; --cell-col: 3 }
-.c-13 { --cell-row: 1; --cell-col: 4 }
-.c-14 { --cell-row: 1; --cell-col: 5 }
-.c-15 { --cell-row: 1; --cell-col: 6 }
-.c-16 { --cell-row: 1; --cell-col: 7 }
-.c-17 { --cell-row: 1; --cell-col: 8 }
-
-.c-18 { --cell-row: 2; --cell-col: 0 }
-.c-19 { --cell-row: 2; --cell-col: 1 }
-.c-20 { --cell-row: 2; --cell-col: 2 }
-.c-21 { --cell-row: 2; --cell-col: 3 }
-.c-22 { --cell-row: 2; --cell-col: 4 }
-.c-23 { --cell-row: 2; --cell-col: 5 }
-.c-24 { --cell-row: 2; --cell-col: 6 }
-.c-25 { --cell-row: 2; --cell-col: 7 }
-.c-26 { --cell-row: 2; --cell-col: 8 }
-
-.c-27 { --cell-row: 3; --cell-col: 0 }
-.c-28 { --cell-row: 3; --cell-col: 1 }
-.c-29 { --cell-row: 3; --cell-col: 2 }
-.c-30 { --cell-row: 3; --cell-col: 3 }
-.c-31 { --cell-row: 3; --cell-col: 4 }
-.c-32 { --cell-row: 3; --cell-col: 5 }
-.c-33 { --cell-row: 3; --cell-col: 6 }
-.c-34 { --cell-row: 3; --cell-col: 7 }
-.c-35 { --cell-row: 3; --cell-col: 8 }
-
-.c-36 { --cell-row: 4; --cell-col: 0 }
-.c-37 { --cell-row: 4; --cell-col: 1 }
-.c-38 { --cell-row: 4; --cell-col: 2 }
-.c-39 { --cell-row: 4; --cell-col: 3 }
-.c-40 { --cell-row: 4; --cell-col: 4 }
-.c-41 { --cell-row: 4; --cell-col: 5 }
-.c-42 { --cell-row: 4; --cell-col: 6 }
-.c-43 { --cell-row: 4; --cell-col: 7 }
-.c-44 { --cell-row: 4; --cell-col: 8 }
-
-.c-45 { --cell-row: 5; --cell-col: 0 }
-.c-46 { --cell-row: 5; --cell-col: 1 }
-.c-47 { --cell-row: 5; --cell-col: 2 }
-.c-48 { --cell-row: 5; --cell-col: 3 }
-.c-49 { --cell-row: 5; --cell-col: 4 }
-.c-50 { --cell-row: 5; --cell-col: 5 }
-.c-51 { --cell-row: 5; --cell-col: 6 }
-.c-52 { --cell-row: 5; --cell-col: 7 }
-.c-53 { --cell-row: 5; --cell-col: 8 }
-
-.c-54 { --cell-row: 6; --cell-col: 0 }
-.c-55 { --cell-row: 6; --cell-col: 1 }
-.c-56 { --cell-row: 6; --cell-col: 2 }
-.c-57 { --cell-row: 6; --cell-col: 3 }
-.c-58 { --cell-row: 6; --cell-col: 4 }
-.c-59 { --cell-row: 6; --cell-col: 5 }
-.c-60 { --cell-row: 6; --cell-col: 6 }
-.c-61 { --cell-row: 6; --cell-col: 7 }
-.c-62 { --cell-row: 6; --cell-col: 8 }
-
-.c-63 { --cell-row: 7; --cell-col: 0 }
-.c-64 { --cell-row: 7; --cell-col: 1 }
-.c-65 { --cell-row: 7; --cell-col: 2 }
-.c-66 { --cell-row: 7; --cell-col: 3 }
-.c-67 { --cell-row: 7; --cell-col: 4 }
-.c-68 { --cell-row: 7; --cell-col: 5 }
-.c-69 { --cell-row: 7; --cell-col: 6 }
-.c-70 { --cell-row: 7; --cell-col: 7 }
-.c-71 { --cell-row: 7; --cell-col: 8 }
-
-.c-72 { --cell-row: 8; --cell-col: 0 }
-.c-73 { --cell-row: 8; --cell-col: 1 }
-.c-74 { --cell-row: 8; --cell-col: 2 }
-.c-75 { --cell-row: 8; --cell-col: 3 }
-.c-76 { --cell-row: 8; --cell-col: 4 }
-.c-77 { --cell-row: 8; --cell-col: 5 }
-.c-78 { --cell-row: 8; --cell-col: 6 }
-.c-79 { --cell-row: 8; --cell-col: 7 }
-.c-80 { --cell-row: 8; --cell-col: 8 }
