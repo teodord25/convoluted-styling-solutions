@@ -22,6 +22,10 @@
 
 :root {
 	animation: tick 86400000ms linear infinite;
+
+	--origin-offset-x: 180;
+	--origin-offset-y: 180;
+
 	--i1x1: 180;
 	--i1y1: 180;
 	--i1x2: 270;

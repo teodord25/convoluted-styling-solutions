@@ -13,6 +13,24 @@ body {
 	border: 1px solid red;
 }
 
+.x-axis {
+	position: absolute;
+	left: calc(var(--origin-offset-x) * 1px - 50%);
+	top: calc(var(--origin-offset-y) * 1px);
+	width: 100%;
+	height: 1px;
+	background: black;
+}
+
+.y-axis {
+	position: absolute;
+	left: calc(var(--origin-offset-x) * 1px);
+	top: calc(var(--origin-offset-y) * 1px - 50%);
+	width: 1px;
+	height: 100%;
+	background: black;
+}
+
 .vec {
 	margin: 0;
 	padding: 0;
