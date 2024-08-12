@@ -26,11 +26,8 @@
 	--origin-offset-x: 180;
 	--origin-offset-y: 180;
 
-	--i1x1: 180;
-	--i1y1: 180;
-	--i1x2: 270;
-	--i1y2: 180;
-	--line-width: 5;
+	--iv1x: 180;
+	--iv1y: 0;
 }
 
 /* rotation matrix */
@@ -56,47 +53,15 @@
 
 /* size and translation */
 :root {
-	--x1: var(--i1x1);
-	--y1: var(--i1y1);
-
 	/* NOTE: you have to define the vector's x and y relative to the point you want to rotate around
 	* because by just rotating the vector, the origin of the vector will be the origin of the coordinate system
 	* and not the point you want to rotate around */
-
-	/* point of rotation */
-	--ox: var(--i1x1);
-	--oy: var(--i1y1);
-
-	/* local x and y (relative to the point of rotation) */
-	--vx2: calc(
-		var(--i1x2) - var(--ox)
-	);
-	--vy2: calc(
-		var(--i1y2) - var(--oy)
-	);
-
 	/* rotated x and y */
-	--rx2: calc(
-		var(--xx) * var(--vx2) + var(--xy) * var(--vy2)
+	--v1x: calc(
+		var(--xx) * var(--iv1x) + var(--xy) * var(--iv1y)
 	);
-	--ry2: calc(
-		var(--yx) * var(--vx2) + var(--yy) * var(--vy2)
-	);
-
-	/* global x and y (relative to the origin) */
-	--x2: calc(
-		var(--rx2) + var(--ox)
-	);
-	--y2: calc(
-		var(--ry2) + var(--oy)
-	);
-
-	--w: calc(
-		max(var(--x2) - var(--x1), var(--x1) - var(--x2))
-	);
-
-	--h: calc(
-		max(var(--y2) - var(--y1), var(--y1) - var(--y2))
+	--v1y: calc(
+		var(--yx) * var(--iv1x) + var(--yy) * var(--iv1y)
 	);
 
 	--max-width: calc(
@@ -148,8 +113,8 @@
 	--point-x: 30;
 
 	/* NOTE: this can be used to debug values, it will draw a point at the specified x and y */
-	--point-x: var(--i2x1);
-	--point-y: var(--i2y1);
+	--point-x: var(--v1x);
+	--point-y: var(--v1y);
 
 	--ppx: var(--point-x);
 	--ppy: var(--point-y);

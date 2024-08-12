@@ -7,9 +7,18 @@ body {
 	position: relative;
 }
 
-.container {
-	width: 360px;
-	height: 360px;
+.counter {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.positive-quadrant {
+	width: 180;
+	height: 180;
+	position: absolute;
+	left: calc(var(--origin-offset-x) * 1px);
+	top: calc(var(--origin-offset-y) * 1px);
 	border: 1px solid red;
 }
 
@@ -31,7 +40,16 @@ body {
 	background: black;
 }
 
-.vec {
+.v1 {
+	position: absolute;
+	left: calc(var(--v1x) * 1px);
+	top: calc(var(--v1y) * 1px);
+	width: 10px;
+	height: 10px;
+	background: red;
+}
+
+.arrow {
 	margin: 0;
 	padding: 0;
 	z-index: 2;
@@ -39,39 +57,30 @@ body {
 	position: relative; /* figure out whether making this absolute is a good idea */
 
 	background: gray;
-	/* clip-path: polygon( */
-	/* 	calc(var(--arrow-x1) * 1%) calc(var(--arrow-y1) * 1%), */
-	/* 	calc(var(--arrow-x2) * 1%) calc(var(--arrow-y2) * 1%), */
-	/* 	calc(var(--arrow-x3) * 1%) calc(var(--arrow-y3) * 1%), */
-	/* 	calc(var(--arrow-x4) * 1%) calc(var(--arrow-y4) * 1%), */
-	/* 	calc(var(--arrow-x5) * 1%) calc(var(--arrow-y5) * 1%), */
-	/* 	calc(var(--arrow-x6) * 1%) calc(var(--arrow-y6) * 1%), */
-	/* 	calc(var(--arrow-x7) * 1%) calc(var(--arrow-y7) * 1%) */
-	/* ); */
 
-	/* TODO: TRY WILLCHANGE TRANSLFORM AND PRESERVE 3D SPACE */
+	/* TODO: add will-change: transform; */
 }
 
-.v1 {
+.arw1 {
 	background: blue;
 	width: calc(var(--max-width) / 2 / 1.41 * 1px);
 	height: calc(var(--max-height) / 2 / 1.41 * 1px);
 
-	left: calc(var(--i1x1) * 1px);
-	top:  calc(var(--i1y1) * 1px);
+	left: 0;
+	top:  0;
 
 	/* set rotation point */
 	transform-origin: 0 0;
 	transform: rotate(
 		calc(
 			(
-				var(--rad) - (3.1415/4) /* account for inherent rotation because arrow is defined diagonally */
+				var(--rad)
 			) * 1rad
 		)
 	);
 }
 
-.v2 {
+.arw2 {
 	background: yellow;
 	width: calc(
 		var(--max-width) / 2 / 1.41 * 1px
@@ -94,94 +103,4 @@ body {
 			( -2 * var(--rad) ) * 1rad
 		)
 	);
-}
-
-.canvas {
-	position: absolute;
-	left:0px;
-	top:0px;
-	
-	width: 100%;
-	height: 100%;
-	background: red;
-	z-index: 1;
-
-	clip-path: polygon(
-		calc(var(--ppx) * 1px) calc(var(--ppy) * 1px),
-		calc(var(--pqx) * 1px) calc(var(--pqy) * 1px),
-		calc(var(--prx) * 1px) calc(var(--pry) * 1px),
-		calc(var(--psx) * 1px) calc(var(--psy) * 1px)
-	);
-}
-
-.canvas1 {
-	--rad: max(0, calc((var(--t) / 1000) * (.25 * 3.1415) - 0.1));
-	--point-x: calc(cos(var(--rad)) * (var(--i1x2) - var(--i1x1)) + (-1 * sin(var(--rad))) * (var(--i1y2) - var(--i1y1)) + var(--i1x1));
-	--point-y: calc(sin(var(--rad)) * (var(--i1x2) - var(--i1x1)) + cos(var(--rad)) * (var(--i1y2) - var(--i1y1)) + var(--i1y1));
-
-	--ppx: var(--point-x);                           --ppy: var(--point-y);
-	--pqx: var(--point-x);                           --pqy: calc(var(--point-y) + var(--point-size));
-	--prx: calc(var(--point-x) + var(--point-size)); --pry: calc(var(--point-y) + var(--point-size));
-	--psx: calc(var(--point-x) + var(--point-size)); --psy: var(--point-y);
-}
-
-.canvas2 {
-	--rad: max(0, calc((var(--t) / 1000) * (.25 * 3.1415) - 0.2));
-	--point-x: calc(cos(var(--rad)) * (var(--i1x2) - var(--i1x1)) + (-1 * sin(var(--rad))) * (var(--i1y2) - var(--i1y1)) + var(--i1x1));
-	--point-y: calc(sin(var(--rad)) * (var(--i1x2) - var(--i1x1)) + cos(var(--rad)) * (var(--i1y2) - var(--i1y1)) + var(--i1y1));
-
-	--ppx: var(--point-x);                           --ppy: var(--point-y);
-	--pqx: var(--point-x);                           --pqy: calc(var(--point-y) + var(--point-size));
-	--prx: calc(var(--point-x) + var(--point-size)); --pry: calc(var(--point-y) + var(--point-size));
-	--psx: calc(var(--point-x) + var(--point-size)); --psy: var(--point-y);
-}
-
-.canvas3 {
-	--rad: max(0, calc((var(--t) / 1000) * (.25 * 3.1415) - 0.3));
-	--point-x: calc(cos(var(--rad)) * (var(--i1x2) - var(--i1x1)) + (-1 * sin(var(--rad))) * (var(--i1y2) - var(--i1y1)) + var(--i1x1));
-	--point-y: calc(sin(var(--rad)) * (var(--i1x2) - var(--i1x1)) + cos(var(--rad)) * (var(--i1y2) - var(--i1y1)) + var(--i1y1));
-
-	--ppx: var(--point-x);                           --ppy: var(--point-y);
-	--pqx: var(--point-x);                           --pqy: calc(var(--point-y) + var(--point-size));
-	--prx: calc(var(--point-x) + var(--point-size)); --pry: calc(var(--point-y) + var(--point-size));
-	--psx: calc(var(--point-x) + var(--point-size)); --psy: var(--point-y);
-}
-
-.canvas4 {
-	--rad: max(0, calc((var(--t) / 1000) * (.25 * 3.1415) - 0.4));
-	--point-x: calc(cos(var(--rad)) * (var(--i1x2) - var(--i1x1)) + (-1 * sin(var(--rad))) * (var(--i1y2) - var(--i1y1)) + var(--i1x1));
-	--point-y: calc(sin(var(--rad)) * (var(--i1x2) - var(--i1x1)) + cos(var(--rad)) * (var(--i1y2) - var(--i1y1)) + var(--i1y1));
-
-	--ppx: var(--point-x);                           --ppy: var(--point-y);
-	--pqx: var(--point-x);                           --pqy: calc(var(--point-y) + var(--point-size));
-	--prx: calc(var(--point-x) + var(--point-size)); --pry: calc(var(--point-y) + var(--point-size));
-	--psx: calc(var(--point-x) + var(--point-size)); --psy: var(--point-y);
-}
-
-.canvas5 {
-	--rad: max(0, calc((var(--t) / 1000) * (.25 * 3.1415) - 0.5));
-	--point-x: calc(cos(var(--rad)) * (var(--i1x2) - var(--i1x1)) + (-1 * sin(var(--rad))) * (var(--i1y2) - var(--i1y1)) + var(--i1x1));
-	--point-y: calc(sin(var(--rad)) * (var(--i1x2) - var(--i1x1)) + cos(var(--rad)) * (var(--i1y2) - var(--i1y1)) + var(--i1y1));
-
-	--ppx: var(--point-x);                           --ppy: var(--point-y);
-	--pqx: var(--point-x);                           --pqy: calc(var(--point-y) + var(--point-size));
-	--prx: calc(var(--point-x) + var(--point-size)); --pry: calc(var(--point-y) + var(--point-size));
-	--psx: calc(var(--point-x) + var(--point-size)); --psy: var(--point-y);
-}
-
-.canvas6 {
-	--rad: max(0, calc((var(--t) / 1000) * (.25 * 3.1415) - 0.6));
-	--point-x: calc(cos(var(--rad)) * (var(--i1x2) - var(--i1x1)) + (-1 * sin(var(--rad))) * (var(--i1y2) - var(--i1y1)) + var(--i1x1));
-	--point-y: calc(sin(var(--rad)) * (var(--i1x2) - var(--i1x1)) + cos(var(--rad)) * (var(--i1y2) - var(--i1y1)) + var(--i1y1));
-
-	--ppx: var(--point-x);                           --ppy: var(--point-y);
-	--pqx: var(--point-x);                           --pqy: calc(var(--point-y) + var(--point-size));
-	--prx: calc(var(--point-x) + var(--point-size)); --pry: calc(var(--point-y) + var(--point-size));
-	--psx: calc(var(--point-x) + var(--point-size)); --psy: var(--point-y);
-}
-
-.counter {
-	position: absolute;
-	left: 0;
-	top: 0;
 }
