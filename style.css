@@ -54,23 +54,22 @@ body {
 	padding: 0;
 	z-index: 2;
 
-	position: relative; /* figure out whether making this absolute is a good idea */
+	left: 0;
+	top:  0;
 
-	background: gray;
+	position: relative; /* figure out whether making this absolute is a good idea edit: it's not for some reason */
 
-	/* TODO: add will-change: transform; */
+	transform-origin: 0 0;
+
+	will-change: transform;
 }
 
 .arw1 {
 	background: blue;
-	width: calc(var(--max-width) / 2 / 1.41 * 1px);
-	height: calc(var(--max-height) / 2 / 1.41 * 1px);
 
 	left: 0;
 	top:  0;
 
-	/* set rotation point */
-	transform-origin: 0 0;
 	transform: rotate(
 		calc(
 			(
@@ -82,21 +81,10 @@ body {
 
 .arw2 {
 	background: yellow;
-	width: calc(
-		var(--max-width) / 2 / 1.41 * 1px
-	);
-	height: calc(
-		var(--max-height) / 2 / 1.41 * 1px
-	);
 
 	left: 100%;
 	top: 100%;
 
-	/* NOTE: this can be used to debug values, it will draw a point at the specified x and y */
-	--point-x: var(--i2x1);
-	--point-y: var(--i2y1);
-
-	/* set rotation point */
 	transform-origin: 0 0;
 	transform: rotate(
 		calc(
