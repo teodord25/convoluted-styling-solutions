@@ -42,89 +42,11 @@
 	--yy: calc(      cos(var(--rad)));
 }
 
-/* TODO: you might be able to have a "canvas" element in which you have the
-* clippath thing and you keep adding points to it as you rotate the vector,
-* and you end up "tracing" the points as they change
-
-/* NOTE: This is more proof of concept than anything, transform is probably
-* usable and surely more performant, but this was very interesting to figure
-* out and it's good to know that this is possible in case transform is too
-* limited for the visualiation */
-
-/* size and translation */
 :root {
-	/* NOTE: you have to define the vector's x and y relative to the point you want to rotate around
-	* because by just rotating the vector, the origin of the vector will be the origin of the coordinate system
-	* and not the point you want to rotate around */
-	/* rotated x and y */
 	--v1x: calc(
 		var(--xx) * var(--iv1x) + var(--xy) * var(--iv1y)
 	);
 	--v1y: calc(
 		var(--yx) * var(--iv1x) + var(--yy) * var(--iv1y)
 	);
-
-	--max-width: calc(
-		max(var(--i1x2) - var(--i1x1), var(--i1x1) - var(--i1x2)) * 2
-	);
-
-	--max-height: calc(
-		max(var(--i1x2) - var(--i1x1), var(--i1x1) - var(--i1x2)) * 2
-	);
-}
-
-
-:root {
-	--arrow-x1: 0;
-	--arrow-y1: 10;
-
-	--arrow-x2: 80;
-	--arrow-y2: 90;
-
-	--arrow-x3: 70;
-	--arrow-y3: 100;
-
-	--arrow-x4: 100;
-	--arrow-y4: 100;
-
-	--arrow-x5: 100;
-	--arrow-y5: 70;
-
-	--arrow-x6: 90;
-	--arrow-y6: 80;
-
-	--arrow-x7: 10;
-	--arrow-y7: 0;
-}
-
-/* second vector */
-:root {
-	--i2x1: calc(
-		var(--x2)
-	);
-	--i2y1: calc(
-		var(--y2)
-	);
-}
-
-/* canvas point computations */
-:root {
-	--point-size: 10;
-	--point-x: 30;
-
-	/* NOTE: this can be used to debug values, it will draw a point at the specified x and y */
-	--point-x: var(--v1x);
-	--point-y: var(--v1y);
-
-	--ppx: var(--point-x);
-	--ppy: var(--point-y);
-
-	--pqx: var(--point-x);
-	--pqy: calc(var(--point-y) + var(--point-size));
-
-	--prx: calc(var(--point-x) + var(--point-size));
-	--pry: calc(var(--point-y) + var(--point-size));
-
-	--psx: calc(var(--point-x) + var(--point-size));
-	--psy: var(--point-y);
 }
