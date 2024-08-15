@@ -72,6 +72,7 @@
 
 :root {
 	--phase: calc(2 * pi * var(--t) / 5000);
+	--scale: 1/4;
 }
 
 
@@ -79,10 +80,10 @@
 * but separating them into x and y doesn't. */
 :root {
 	--q00: 0;
-	--const00: calc(var(--q00) * 2 * pi / 4);
+	--const00: calc(var(--q00) * 2 * pi * var(--scale));
 
 	--a00: calc(
-		1 / 4 * (
+		var(--scale) * (
 			var(--p1x) +
 			var(--p2x) +
 			var(--p3x) +
@@ -91,7 +92,7 @@
 	);
 
 	--b00: calc(
-		1 / 4 * (
+		var(--scale) * (
 			var(--p1y) +
 			var(--p2y) +
 			var(--p3y) +
@@ -110,10 +111,10 @@
 
 :root {
 	--q01: 1;
-	--const01: calc(var(--q01) * 2 * pi / 4);
+	--const01: calc(var(--q01) * 2 * pi * var(--scale));
 
 	--a01: calc(
-		1 / 4 * (
+		var(--scale) * (
 			var(--p1x) * (cos(var(--const01) * 0) + sin(var(--const01) * 0)) +
 			var(--p2x) * (cos(var(--const01) * 1) + sin(var(--const01) * 1)) +
 			var(--p3x) * (cos(var(--const01) * 2) + sin(var(--const01) * 2)) +
@@ -122,7 +123,7 @@
 	);
 
 	--b01: calc(
-		1 / 4 * (
+		var(--scale) * (
 			var(--p1y) * (cos(var(--const01) * 0) - sin(var(--const01) * 0)) +
 			var(--p2y) * (cos(var(--const01) * 1) - sin(var(--const01) * 1)) +
 			var(--p3y) * (cos(var(--const01) * 2) - sin(var(--const01) * 2)) +
@@ -143,7 +144,7 @@
 	--const-1: calc(var(--q-1) * 2 * pi / 4);
 
 	--a-1: calc(
-		1 / 4 * (
+		var(--scale) * (
 			var(--p1x) * (cos(var(--const-1) * 0) + sin(var(--const-1) * 0)) +
 			var(--p2x) * (cos(var(--const-1) * 1) + sin(var(--const-1) * 1)) +
 			var(--p3x) * (cos(var(--const-1) * 2) + sin(var(--const-1) * 2)) +
@@ -152,7 +153,7 @@
 	);
 
 	--b-1: calc(
-		1 / 4 * (
+		var(--scale) * (
 			var(--p1y) * (cos(var(--const-1) * 0) - sin(var(--const-1) * 0)) +
 			var(--p2y) * (cos(var(--const-1) * 1) - sin(var(--const-1) * 1)) +
 			var(--p3y) * (cos(var(--const-1) * 2) - sin(var(--const-1) * 2)) +
