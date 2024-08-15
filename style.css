@@ -151,68 +151,15 @@ body {
 	);
 }
 
-.v00:after {
-	content: '0';
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-
-.v01:after {
-	content: '1';
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-
-.v-1:after {
-	content: '-1';
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-
-.v02:after {
-	content: '2';
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-
-.v-2:after {
-	content: '-2';
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-
-.v03:after {
-	content: '3';
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-
-.v-3:after {
-	content: '-3';
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-
-.v04:after {
-	content: '4';
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-
-.v-4:after {
-	content: '-4';
-	position: absolute;
-	left: 0;
-	top: 0;
-}
+.v00:after { content: '0'; }
+.v01:after { content: '1'; }
+.v-1:after { content: '-1'; }
+.v02:after { content: '2'; }
+.v-2:after { content: '-2'; }
+.v03:after { content: '3'; }
+.v-3:after { content: '-3'; }
+.v04:after { content: '4'; }
+.v-4:after { content: '-4'; }
 
 .p1 {
 	position: absolute;
