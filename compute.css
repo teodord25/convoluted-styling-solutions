@@ -137,8 +137,9 @@
 		var(--a01) * sin(var(--const01) * var(--phase)) + var(--b01) * cos(var(--const01) * var(--phase))
 	);
 }
+
 :root {
-	--q-1: -1; /* Changed from 1 to -1 for -1st harmonic */
+	--q-1: -1;
 	--const-1: calc(var(--q-1) * 2 * pi / 4);
 
 	--a-1: calc(
