@@ -40,13 +40,238 @@ body {
 	background: black;
 }
 
-.v1 {
+.v {
 	position: absolute;
-	left: calc(var(--v1x) * 1px);
-	top: calc(var(--v1y) * 1px);
 	width: 10px;
 	height: 10px;
 	background: red;
+}
+
+.v00 {
+	background: red;
+	left: calc(
+		var(--x00)
+		* 1px
+	);
+	top: calc(
+		var(--y00)
+		* 1px
+	);
+}
+.v01 {
+	background: green;
+	left: calc(
+		(var(--x00) + var(--x01))
+		* 1px
+	);
+	top: calc(
+		(var(--y00) + var(--y01))
+		* 1px
+	);
+}
+
+.v-1 {
+	background: blue;
+	left: calc(
+		(var(--x00) + var(--x01) + var(--x-1))
+		* 1px
+	);
+	top: calc(
+		(var(--y00) + var(--y01) + var(--y-1))
+		* 1px
+	);
+}
+
+.v02 {
+	background: purple;
+	left: calc(
+		(var(--x00) + var(--x01) + var(--x-1) + var(--x02))
+		* 1px
+	);
+	top: calc(
+		(var(--y00) + var(--y01) + var(--y-1) + var(--y02))
+		* 1px
+	);
+}
+
+.v-2 {
+	left: calc(
+		(var(--f00x) + var(--f01x) + var(--f-1x) + var(--f02x) + var(--f-2x))
+		* 1px
+	);
+	top: calc(
+		(var(--f00y) + var(--f01y) + var(--f-1y) + var(--f02y) + var(--f-2y))
+		* 1px
+	);
+}
+
+.v03 {
+	background: yellow;
+	left: calc(
+		(var(--f00x) + var(--f01x) + var(--f-1x) + var(--f02x) + var(--f-2x) + var(--f03x))
+		* 1px
+	);
+	top: calc(
+		(var(--f00y) + var(--f01y) + var(--f-1y) + var(--f02y) + var(--f-2y) + var(--f03y))
+		* 1px
+	);
+}
+
+.v-3 {
+	left: calc(
+		(var(--f00x) + var(--f01x) + var(--f-1x) + var(--f02x) + var(--f-2x) + var(--f03x) + var(--f-3x))
+		* 1px
+	);
+	top: calc(
+		(var(--f00y) + var(--f01y) + var(--f-1y) + var(--f02y) + var(--f-2y) + var(--f03y) + var(--f-3y))
+		* 1px
+	);
+}
+
+.v04 {
+	background: orange;
+	left: calc(
+		(var(--f00x) + var(--f01x) + var(--f-1x) + var(--f02x) + var(--f-2x) + var(--f03x) + var(--f-3x) + var(--f04x))
+		* 1px
+	);
+	top: calc(
+		(var(--f00y) + var(--f01y) + var(--f-1y) + var(--f02y) + var(--f-2y) + var(--f03y) + var(--f-3y) + var(--f04y))
+		* 1px
+	);
+}
+
+.v-4 {
+	left: calc(
+		(var(--f00x) + var(--f01x) + var(--f-1x) + var(--f02x) + var(--f-2x) + var(--f03x) + var(--f-3x) + var(--f04x) + var(--f-4x))
+		* 1px
+	);
+	top: calc(
+		(var(--f00y) + var(--f01y) + var(--f-1y) + var(--f02y) + var(--f-2y) + var(--f03y) + var(--f-3y) + var(--f04y) + var(--f-4y))
+		* 1px
+	);
+}
+
+.v00:after {
+	content: '0';
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.v01:after {
+	content: '1';
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.v-1:after {
+	content: '-1';
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.v02:after {
+	content: '2';
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.v-2:after {
+	content: '-2';
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.v03:after {
+	content: '3';
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.v-3:after {
+	content: '-3';
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.v04:after {
+	content: '4';
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.v-4:after {
+	content: '-4';
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.p1 {
+	position: absolute;
+	left: calc(
+		var(--p1x)
+		* 1px
+	);
+	top: calc(
+		var(--p1y)
+		* 1px
+	);
+	width: 10px;
+	height: 10px;
+	background: red;
+}
+
+.p2 {
+	position: absolute;
+	left: calc(
+		var(--p2x)
+		* 1px
+	);
+	top: calc(
+		var(--p2y)
+		* 1px
+	);
+	width: 10px;
+	height: 10px;
+	background: blue;
+}
+
+.p3 {
+	position: absolute;
+	left: calc(
+		var(--p3x)
+		* 1px
+	);
+	top: calc(
+		var(--p3y)
+		* 1px
+	);
+	width: 10px;
+	height: 10px;
+	background: purple;
+}
+
+.p4 {
+	position: absolute;
+	left: calc(
+		var(--p4x)
+		* 1px
+	);
+	top: calc(
+		var(--p4y)
+		* 1px
+	);
+	width: 10px;
+	height: 10px;
+	background: green;
 }
 
 .arrow {
