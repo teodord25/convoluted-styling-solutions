@@ -168,34 +168,3 @@
 		var(--a-1) * sin(var(--const-1) * var(--phase)) + var(--b-1) * cos(var(--const-1) * var(--phase))
 	);
 }
-
-:root {
-	--q02: 2;
-	--const02: calc(var(--q02) * 2 * pi / 4);
-
-	--a02: calc(
-		1 / 4 * (
-			var(--p1x) * (cos(var(--const02) * 0) + sin(var(--const02) * 0)) +
-			var(--p2x) * (cos(var(--const02) * 1) + sin(var(--const02) * 1)) +
-			var(--p3x) * (cos(var(--const02) * 2) + sin(var(--const02) * 2)) +
-			var(--p4x) * (cos(var(--const02) * 3) + sin(var(--const02) * 3))
-		)
-	);
-
-	--b02: calc(
-		1 / 4 * (
-			var(--p1y) * (cos(var(--const02) * 0) - sin(var(--const02) * 0)) +
-			var(--p2y) * (cos(var(--const02) * 1) - sin(var(--const02) * 1)) +
-			var(--p3y) * (cos(var(--const02) * 2) - sin(var(--const02) * 2)) +
-			var(--p4y) * (cos(var(--const02) * 3) - sin(var(--const02) * 3))
-		)
-	);
-
-	--x02: calc(
-		var(--a02) * cos(var(--const02) * var(--phase)) - var(--b02) * sin(var(--const02) * var(--phase))
-	);
-
-	--y02: calc(
-		var(--a02) * sin(var(--const02) * var(--phase)) + var(--b02) * cos(var(--const02) * var(--phase))
-	);
-}
