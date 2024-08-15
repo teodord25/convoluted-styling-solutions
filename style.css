@@ -161,64 +161,11 @@ body {
 .v04:after { content: '4'; }
 .v-4:after { content: '-4'; }
 
-.p1 {
-	position: absolute;
-	left: calc(
-		var(--p1x)
-		* 1px
-	);
-	top: calc(
-		var(--p1y)
-		* 1px
-	);
-	width: 10px;
-	height: 10px;
-	background: red;
-}
-
-.p2 {
-	position: absolute;
-	left: calc(
-		var(--p2x)
-		* 1px
-	);
-	top: calc(
-		var(--p2y)
-		* 1px
-	);
-	width: 10px;
-	height: 10px;
+.point {
 	background: blue;
-}
-
-.p3 {
 	position: absolute;
-	left: calc(
-		var(--p3x)
-		* 1px
-	);
-	top: calc(
-		var(--p3y)
-		* 1px
-	);
 	width: 10px;
 	height: 10px;
-	background: purple;
-}
-
-.p4 {
-	position: absolute;
-	left: calc(
-		var(--p4x)
-		* 1px
-	);
-	top: calc(
-		var(--p4y)
-		* 1px
-	);
-	width: 10px;
-	height: 10px;
-	background: green;
 }
 
 .arrow {
@@ -264,3 +211,32 @@ body {
 		)
 	);
 }
+
+.p1 { left: calc(var(--p1x) * 1px); top: calc(var(--p1y) * 1px); }
+.p2 { left: calc(var(--p2x) * 1px); top: calc(var(--p2y) * 1px); }
+.p3 { left: calc(var(--p3x) * 1px); top: calc(var(--p3y) * 1px); }
+.p4 { left: calc(var(--p4x) * 1px); top: calc(var(--p4y) * 1px); }
+.p5 { left: calc(var(--p5x) * 1px); top: calc(var(--p5y) * 1px); }
+.p6 { left: calc(var(--p6x) * 1px); top: calc(var(--p6y) * 1px); }
+.p7 { left: calc(var(--p7x) * 1px); top: calc(var(--p7y) * 1px); }
+.p8 { left: calc(var(--p8x) * 1px); top: calc(var(--p8y) * 1px); }
+.p9 { left: calc(var(--p9x) * 1px); top: calc(var(--p9y) * 1px); }
+
+.p10 { left: calc(var(--p10x) * 1px); top: calc(var(--p10y) * 1px); }
+.p11 { left: calc(var(--p11x) * 1px); top: calc(var(--p11y) * 1px); }
+.p12 { left: calc(var(--p12x) * 1px); top: calc(var(--p12y) * 1px); }
+.p13 { left: calc(var(--p13x) * 1px); top: calc(var(--p13y) * 1px); }
+.p1:after {content: "1"; }
+.p2:after {content: "2"; }
+.p3:after {content: "3"; }
+.p4:after {content: "4"; }
+.p5:after {content: "5"; }
+.p6:after {content: "6"; }
+.p7:after {content: "7"; }
+.p8:after {content: "8"; }
+.p9:after {content: "9"; }
+
+.p10:after {content: "10"; }
+.p11:after {content: "11"; }
+.p12:after {content: "12"; }
+.p13:after {content: "13"; }
